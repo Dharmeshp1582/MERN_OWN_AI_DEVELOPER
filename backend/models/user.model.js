@@ -32,7 +32,7 @@ userSchema.methods.generateJWT = function () {
     return jwt.sign(
         { email: this.email },
         process.env.JWT_SECRET,
-        { expiresIn: '2d' }
+        { expiresIn: '24h' }
     );
 }
 

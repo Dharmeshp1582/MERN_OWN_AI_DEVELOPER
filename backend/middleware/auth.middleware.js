@@ -1,7 +1,5 @@
 import jwt from "jsonwebtoken";
 import redisClient from "../services/redis.service.js";
-import dotenv from 'dotenv'
-dotenv.config();
 
 
 export const authUser = async (req, res, next) => {
@@ -21,6 +19,7 @@ export const authUser = async (req, res, next) => {
             return res.status(401).send({ error: 'Unauthorized User' });
         }
 
+        // console.log("Token:", token)
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
         req.user = decoded;
         next();
