@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from 'react'
 import { UserContext } from '../context/user.context'
 import axios from "../config/axios"
 import { useNavigate } from 'react-router-dom'
+import LogOut from './LogOut'
 
 const Home = () => {
 
@@ -90,10 +91,13 @@ const Home = () => {
                                 <button type="submit" className="px-4 py-2 bg-blue-600 text-white rounded-md">Create</button>
                             </div>
                         </form>
+                        <p className="text-sm text-gray-500 mt-2">Your project will be public, be careful with the name and the content.</p>
                     </div>
                 </div>
             )}
-
+        <div className=' flex justify-end'>
+            <LogOut />
+        </div>
 
         </main>
     )
